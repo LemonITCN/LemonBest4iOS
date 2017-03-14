@@ -10,12 +10,12 @@
 
 @interface LemonBestItem : NSObject
 
-typedef void(^ LK_ACION_SHEET_ON_ITEM_TOUCH)(LemonBestItem *);
+typedef void(^ LK_ACION_SHEET_ON_ITEM_TOUCH)(LemonBestItem *item);
 
 /// @brief 内容控件
 @property (nonatomic , strong) UIView *contentView;
-/// @brief 点击事件
-@property (copy) LK_ACION_SHEET_ON_ITEM_TOUCH action;
+/// @brief 点击事件 - 存储block作为属性要记得用copy，而不是assign
+@property (atomic,copy) LK_ACION_SHEET_ON_ITEM_TOUCH action;
 /// @brief 控件的高度
 @property (assign) CGFloat height;
 

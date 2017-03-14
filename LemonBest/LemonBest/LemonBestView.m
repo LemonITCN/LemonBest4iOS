@@ -59,7 +59,7 @@ static BOOL isShowing = NO;
 static LemonBestView *defaultActionSheetView;
 
 /// @brief 单例方法
-+ (LemonBestView *)defaultActionSheetView{
++ (LemonBestView *)defaultView{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         defaultActionSheetView = [[LemonBestView alloc] init];

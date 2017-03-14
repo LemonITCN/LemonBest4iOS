@@ -19,8 +19,9 @@
 }
 
 - (void)onTouchUpInside{
-    if (self->_item.action) {
-        self->_item.action(self->_item);
+    LK_ACION_SHEET_ON_ITEM_TOUCH actionBlock = self->_item.action;
+    if (actionBlock) {
+        actionBlock(self->_item);
     }
 }
 

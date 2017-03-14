@@ -49,7 +49,7 @@
 
  @return 默认的选择控件
  */
-+ (LemonBestView *)defaultActionSheetView;
++ (LemonBestView *)defaultView;
 
 /**
  显示ActionSheet
