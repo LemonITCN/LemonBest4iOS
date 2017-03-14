@@ -15,7 +15,7 @@ typedef void(^ LK_ACION_SHEET_ON_ITEM_TOUCH)(LemonBestItem *);
 /// @brief 内容控件
 @property (nonatomic , strong) UIView *contentView;
 /// @brief 点击事件
-@property (assign) LK_ACION_SHEET_ON_ITEM_TOUCH action;
+@property (copy) LK_ACION_SHEET_ON_ITEM_TOUCH action;
 /// @brief 控件的高度
 @property (assign) CGFloat height;
 

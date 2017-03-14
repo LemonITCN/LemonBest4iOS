@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F024E4081E7524E400837A75 /* LemonBest.m in Sources */ = {isa = PBXBuildFile; fileRef = F024E4071E7524E400837A75 /* LemonBest.m */; };
-		F024E4091E7524E400837A75 /* LemonBest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F024E4061E7524E400837A75 /* LemonBest.h */; };
 		F024E4171E7524F800837A75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F024E4161E7524F800837A75 /* main.m */; };
 		F024E41A1E7524F800837A75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F024E4191E7524F800837A75 /* AppDelegate.m */; };
 		F024E41D1E7524F800837A75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F024E41C1E7524F800837A75 /* ViewController.m */; };
@@ -38,7 +36,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				F024E4091E7524E400837A75 /* LemonBest.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,8 +43,6 @@
 
 /* Begin PBXFileReference section */
 		F024E4031E7524E400837A75 /* libLemonBest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLemonBest.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F024E4061E7524E400837A75 /* LemonBest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LemonBest.h; sourceTree = "<group>"; };
-		F024E4071E7524E400837A75 /* LemonBest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LemonBest.m; sourceTree = "<group>"; };
 		F024E4131E7524F800837A75 /* LemonBestSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonBestSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F024E4161E7524F800837A75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F024E4181E7524F800837A75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +59,7 @@
 		F024E4441E752B7900837A75 /* LemonBestLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LemonBestLineView.m; sourceTree = "<group>"; };
 		F024E4451E752B7900837A75 /* LemonBestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LemonBestView.h; sourceTree = "<group>"; };
 		F024E4461E752B7900837A75 /* LemonBestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LemonBestView.m; sourceTree = "<group>"; };
+		F072C9751E78215A00953901 /* LemonBest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LemonBest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,14 +102,13 @@
 		F024E4051E7524E400837A75 /* LemonBest */ = {
 			isa = PBXGroup;
 			children = (
-				F024E4061E7524E400837A75 /* LemonBest.h */,
-				F024E4071E7524E400837A75 /* LemonBest.m */,
 				F024E4411E752B7900837A75 /* LemonBestItem.h */,
 				F024E4421E752B7900837A75 /* LemonBestItem.m */,
 				F024E4431E752B7900837A75 /* LemonBestLineView.h */,
 				F024E4441E752B7900837A75 /* LemonBestLineView.m */,
 				F024E4451E752B7900837A75 /* LemonBestView.h */,
 				F024E4461E752B7900837A75 /* LemonBestView.m */,
+				F072C9751E78215A00953901 /* LemonBest.h */,
 			);
 			path = LemonBest;
 			sourceTree = "<group>";
@@ -238,7 +233,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F024E4081E7524E400837A75 /* LemonBest.m in Sources */,
 				F024E4471E752B7900837A75 /* LemonBestItem.m in Sources */,
 				F024E4481E752B7900837A75 /* LemonBestLineView.m in Sources */,
 				F024E4491E752B7900837A75 /* LemonBestView.m in Sources */,
@@ -440,6 +434,7 @@
 				F024E40E1E7524E400837A75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F024E4271E7524F800837A75 /* Build configuration list for PBXNativeTarget "LemonBestSamples" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +443,7 @@
 				F024E4291E7524F800837A75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -2,12 +2,13 @@
 //  LemonBest.h
 //  LemonBest
 //
-//  Created by Lemonsoft on 2017/3/12.
+//  Created by Lemonsoft on 2017/3/14.
 //  Copyright © 2017年 Lemonsoft. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef LemonBest_h
+#define LemonBest_h
 
-@interface LemonBest : NSObject
+#import "LemonBestView.h"
 
-@end
+#endif /* LemonBest_h */
