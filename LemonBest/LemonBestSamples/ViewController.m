@@ -22,17 +22,17 @@
         [as clear];
         as.headViewHeight = 44;
         as.title = @"这是一个普通的LemonBestView";
-        LemonBestItem *cancel = [[LemonBestItem alloc] initWithTitle: @"取消" onTouchBlock:^(LemonBestItem *item) {
+        LemonBestItem *cancel = [[LemonBestItem alloc] initWithTitle: @"取消" onTouchBlock:^(LemonBestView *bestView, LemonBestItem *item) {
             [as hide];
         }];
         ((UILabel *)cancel.contentView).textColor = [UIColor redColor];
         [as addAction: cancel groupIndex: 0];
         [as addActionGroup];
         as.backViewControllerScale = 1;// 设置1 就没有后边viewController的缩放效果了
-        [as addAction: [[LemonBestItem alloc] initWithTitle:@"第一项" onTouchBlock:^(LemonBestItem *item) {
+        [as addAction: [[LemonBestItem alloc] initWithTitle:@"第一项" onTouchBlock:^(LemonBestView *bestView, LemonBestItem *item) {
             self.valueLabel.text = @"value 1";
         }] groupIndex: 1];
-        [as addAction: [[LemonBestItem alloc] initWithTitle:@"第二项" onTouchBlock:^(LemonBestItem *item) {
+        [as addAction: [[LemonBestItem alloc] initWithTitle:@"第二项" onTouchBlock:^(LemonBestView *bestView, LemonBestItem *item) {
             self.valueLabel.text = @"value 2";
         }] groupIndex: 1];
         [as show];

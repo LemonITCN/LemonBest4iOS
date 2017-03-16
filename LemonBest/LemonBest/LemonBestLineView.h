@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "LemonBestItem.h"
 
+@class LemonBestView;
+
 @interface LemonBestLineView : UIView
 
 @property LemonBestItem *item;
@@ -18,9 +20,10 @@
 
  @param frame frame对象
  @param item  事件行信息对象
+ @param bestView 所属BestView
 
  @return 事件行控件
  */
-- (instancetype)initWithFrame:(CGRect)frame actionItem: (LemonBestItem *)item;
+- (instancetype)initWithFrame:(CGRect)frame actionItem: (LemonBestItem *)item bestView: (LemonBestView *)bestView;
 
 @end

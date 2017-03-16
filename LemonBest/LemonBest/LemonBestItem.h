@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class LemonBestView;
+
 @interface LemonBestItem : NSObject
 
-typedef void(^ LK_ACION_SHEET_ON_ITEM_TOUCH)(LemonBestItem *item);
+typedef void(^ LK_ACION_SHEET_ON_ITEM_TOUCH)(LemonBestView *bestView, LemonBestItem *item);
 
 /// @brief 内容控件
 @property (nonatomic , strong) UIView *contentView;

@@ -74,8 +74,8 @@ static LemonBestView *defaultActionSheetView;
         _mainWindow = [UIApplication sharedApplication].keyWindow;
         _defaultActionSheetWindow.frame = CGRectMake(0, 0, LKScreen.width, LKScreen.height);
         _contentView.frame = CGRectMake(0, LKScreen.height, LKScreen.width, [self calViewHeight]);
-        [self initHeadView];
-        [self initBodyView];
+        [self _initHeadView];
+        [self _initBodyView];
         [UIView animateWithDuration: 0.5 delay: 0 options: UIViewAnimationOptionCurveEaseInOut animations:^{
             [UIApplication sharedApplication].keyWindow.transform = CGAffineTransformMakeScale(self.backViewControllerScale, self.backViewControllerScale);
             [_defaultActionSheetWindow makeKeyAndVisible];
@@ -152,11 +152,11 @@ static LemonBestView *defaultActionSheetView;
     return contentHeight > maxHeight ? maxHeight : contentHeight;
 }
 
-- (void)initHeadView{
+- (void)_initHeadView{
     self->_headView.frame = CGRectMake(-1, -1, LKScreen.width + 2, self.headViewHeight);
 }
 
-- (void)initBodyView{
+- (void)_initBodyView{
     self->_bodyView.frame = CGRectMake(0, self->_headView.frame.size.height, LKScreen.width, [self calViewHeight]);
     CGFloat pointer = [self calContentHeight];
     self->_bodyView.contentSize = CGSizeMake(0, pointer);
@@ -166,7 +166,7 @@ static LemonBestView *defaultActionSheetView;
     for (NSMutableArray<LemonBestItem *> *group in self->actionItems) {
         for (LemonBestItem *item in group) {
             pointer -= item.height;
-            LemonBestLineView *lineView= [[LemonBestLineView alloc] initWithFrame: CGRectMake(0, pointer, LKScreen.width, item.height) actionItem: item];
+            LemonBestLineView *lineView= [[LemonBestLineView alloc] initWithFrame: CGRectMake(0, pointer, LKScreen.width, item.height) actionItem: item bestView: self];
             lineView.backgroundColor = [UIColor colorWithRed: 0.93 green:0.93 blue:0.93 alpha:1];
             [lineView addSubview: item.contentView];
             [self->_bodyView addSubview:lineView];

@@ -8,9 +8,15 @@
 
 #import "LemonBestLineView.h"
 
+@interface LemonBestLineView(){
+    LemonBestView *_bestView;
+}
+
+@end
+
 @implementation LemonBestLineView
 
-- (instancetype)initWithFrame:(CGRect)frame actionItem: (LemonBestItem *)item{
+- (instancetype)initWithFrame:(CGRect)frame actionItem: (LemonBestItem *)item bestView: (LemonBestView *)bestView{
     if (self = [super initWithFrame: frame]) {
         self->_item = item;
         [self addGestureRecognizer: [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(onTouchUpInside)]];
@@ -21,7 +27,7 @@
 - (void)onTouchUpInside{
     LK_ACION_SHEET_ON_ITEM_TOUCH actionBlock = self->_item.action;
     if (actionBlock) {
-        actionBlock(self->_item);
+        actionBlock(self->_bestView,self->_item);
     }
 }
 

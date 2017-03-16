@@ -7,6 +7,7 @@
 //
 
 #import "LemonBestItem.h"
+#import "LemonBestView.h"
 
 #define DEFAULT_HEIGHT 50
 
@@ -36,8 +37,12 @@
 
 - (instancetype)initWithTitle: (NSString *)title height: (CGFloat)height textColor: (UIColor *)textColor onTouchEvent: (SEL)onTouchEvent withObject: (NSObject *)obj{
     if ([self initWithTitle: title height:height textColor: textColor]) {
-        self.action = ^(LemonBestItem *item){
-            [obj performSelector: onTouchEvent withObject: obj];
+        self.action = ^(LemonBestView *bestView,LemonBestItem *item){
+            if (onTouchEvent && obj)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                [obj performSelector: onTouchEvent withObject: obj];
+#pragma clang diagnostic pop
         };
     }
     return self;
@@ -63,6 +68,10 @@
     return [self initWithTitle: title height: DEFAULT_HEIGHT textColor: [UIColor blackColor] onTouchEvent: onTouchBlock];
 }
 
+
+/**
+ 通过自定义View来初始化
+ */
 - (instancetype)initWithCustomView: (UIView *)customView height: (CGFloat)height{
     if (self = [super init]) {
         self.contentView = customView;
@@ -71,6 +80,9 @@
     return self;
 }
 
+/**
+ 通过自定义View并且自定义触摸事件
+ */
 - (instancetype)initWithCustomView: (UIView *)customView height: (CGFloat)height onTouchBlock: (LK_ACION_SHEET_ON_ITEM_TOUCH)onTouchBlock{
     if (self = [super init]) {
         self.contentView = customView;
